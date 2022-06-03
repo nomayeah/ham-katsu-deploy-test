@@ -1,6 +1,8 @@
+const postCssPlugins = require('./postcss-config.js')
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `test blog`,
     author: {
       name: `Kyle Mathews`,
       summary: `who lives and works in San Francisco building useful things.`,
@@ -128,5 +130,14 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        postCssPlugins: [...postCssPlugins],
+        cssLoaderOptions: {
+          camelCase: false
+        }
+      }
+    }
   ],
 }

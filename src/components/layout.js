@@ -1,21 +1,23 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { styles } from "./header/header.module.sass"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
+  console.log(rootPath)
 
   if (isRootPath) {
     header = (
       <h1 className="main-heading">
-        <Link to="/">{title}</Link>
+        <Link to="/">{title} test2</Link>
       </h1>
     )
   } else {
     header = (
       <Link className="header-link-home" to="/">
-        {title}
+        {title} test
       </Link>
     )
   }
