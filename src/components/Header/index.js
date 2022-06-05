@@ -10,7 +10,7 @@ const Header = () => {
 
   header = (
     <>
-      <h1 className={styles.current}>
+      <h1 className={styles.logo}>
         <Link to="/" className="logo">test24</Link>
       </h1>
       <Nav />

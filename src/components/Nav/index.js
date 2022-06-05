@@ -12,7 +12,7 @@ const Nav = () => {
         <li>
           <Link to="/">test1</Link>
         </li>
-        <li className={styles.logo}>
+        <li className={styles.current}>
           <Link to="/">test2</Link>
         </li>
       </nav>
