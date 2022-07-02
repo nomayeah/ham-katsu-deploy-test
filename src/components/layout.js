@@ -1,5 +1,5 @@
 import * as React from "react"
-import Header from "./Header/index"
+import { Header } from "./Header/index"
 import ShareSns from "./ShareSns/index"
 import Tag from './Tag/index'
 

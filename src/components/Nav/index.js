@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import * as styles from './_nav.module.scss'
 
-const Nav = () => {
+export const Nav = () => {
   let nav
 
   nav = (
@@ -21,5 +21,3 @@ const Nav = () => {
 
   return nav
 }
-
-export default Nav
