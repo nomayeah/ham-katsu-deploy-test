@@ -4,9 +4,9 @@ import * as styles from './_heroImg.module.scss'
 
 export const HeroImg = ({data}) => {
   let heroImg
-  const img = data.heroImage.childImageSharp.fluid.src
+  const img = data.heroImage ? data.heroImage.childImageSharp.fluid.src : ''
   const title = data.title
-  const subTitle = data.subTitle
+  const subTitle = data.subTitle ? data.subTitle : ''
 
   heroImg = (
     <div className={styles.heroImg}>
