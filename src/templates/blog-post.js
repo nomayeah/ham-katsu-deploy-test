@@ -5,12 +5,15 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Tag } from "../components/Tag"
+import { HeroImg } from "../components/HeroImg"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const tags = post.frontmatter.tags
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+
+  const heroData = post.frontmatter
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -23,13 +26,9 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
 
-          <Tag pathname={location.pathname} tags={tags} />
+        <HeroImg data={heroData} />
 
-        </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
@@ -65,6 +64,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <Tag pathname={location.pathname} tags={tags} />
     </Layout>
   )
 }
@@ -88,9 +88,18 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        subTitle
+        heroImage {
+          childImageSharp {
+            fluid(maxWidth: 1280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         date(formatString: "MMMM DD, YYYY")
         description
         tags
+        categorys
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

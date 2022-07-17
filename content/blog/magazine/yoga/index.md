@@ -1,16 +1,17 @@
 ---
-title: 大好評の製品がついに定番化！
+title: "大好評の製品がついに定番化！"
+subTitle: "XSTM バーンフィットTM パウダー・XSTM クレアチン パウダー"
+heroImage: "./test_hero.png"
 date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
-tags: ["animals", "zoos"]
+tags: ["animals", "zoosss"]
 categorys: ["yoga"]
 ---
-
-# 大好評の製品がついに定番化！<span style="color:red">XSTM バーンフィットTM パウダー・XSTM クレアチン パウダー</span>
 
 めざせ、理想のボディ。
 
 燃える！ダイエッターをサポートする「XSTM バーンフィットTM パウダー」と “瞬間”チャージ、コンディションを整える「XSTM クレアチン パウダー」が大反響におこたえしてついに定番化されました。
+
 
 インフォームドチョイスとは？
 
