@@ -11,8 +11,8 @@ export const Header = () => {
 
   header = (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <Link to="/" className="logo">
+      <div>
+        <Link to="/">
           <img src={logoImg} alt="logo画像" />
         </Link>
       </div>

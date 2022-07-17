@@ -126,6 +126,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      heroImage: File @fileByRelativePath
     }
 
     type Fields {

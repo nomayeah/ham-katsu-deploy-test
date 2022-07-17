@@ -40,7 +40,7 @@ export const Nav = () => {
       <ul>
         {navData.map((ele, index) => {
           return (
-            <li className={styles.current} key={index}>
+            <li key={index}>
               <Link to={ele.link} className={styles.link}>
                 {ele.text}
                 {ele.subText && <sub>{ele.subText}</sub>}
