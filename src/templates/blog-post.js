@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import kebabCase from "lodash/kebabCase"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { Tag } from "../components/Tag"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -13,7 +13,6 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
 
   return (
-    console.log(post),
     <Layout location={location} title={siteTitle}>
       <Seo
         title={post.frontmatter.title}
@@ -27,13 +26,9 @@ const BlogPostTemplate = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
-          <div className="tags-article">
-            {tags && tags.length > 0 && tags.map(tag => {
-              return (
-                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-              )
-            })}
-          </div>
+
+          <Tag pathname={location.pathname} tags={tags} />
+
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}

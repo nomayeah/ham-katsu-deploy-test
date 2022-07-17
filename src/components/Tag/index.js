@@ -1,25 +1,25 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import kebabCase from "lodash/kebabCase"
 
 import * as styles from './_tag.module.scss'
 
-const Tag = () => {
+export const Tag = ({pathname, tags}) => {
   let tag
 
   tag = (
     <>
-      <nav>
-        <li>
-          <Link to="/tags/">tag</Link>
-        </li>
-        <li className={styles.current}>
-          <Link to="/tags/">tag2</Link>
-        </li>
-      </nav>
+      {pathname !== '/' && 
+        <div className={styles.current} >
+          {tags && tags.length > 0 && tags.map(tag => {
+            return (
+              <Link to={`/magazine/tags/${kebabCase(tag)}/`} key={tag}>{tag}</Link>
+            )
+          })}
+        </div>
+      }
     </>
   )
 
   return tag
 }
-
-export default Tag

@@ -4,15 +4,18 @@ import { Nav } from '../Nav/index'
 
 import * as styles from './_header.module.scss'
 
+import logoImg from '../../images/header1_logo2_1.svg'
 
 export const Header = () => {
   let header
 
   header = (
     <header className={styles.header}>
-      <h1 className={styles.logo}>
-        <Link to="/" className="logo">logo</Link>
-      </h1>
+      <div className={styles.logo}>
+        <Link to="/" className="logo">
+          <img src={logoImg} alt="logo画像" />
+        </Link>
+      </div>
       <Nav />
     </header>
   )
